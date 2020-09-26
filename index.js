@@ -2,7 +2,7 @@ const inquirer = require('inquirer')
 
 const fs = require('fs');
 
-const generateMarkdown = require("./utils/generateMarkdown");
+const generateMarkdown = require("./Develop/utils/generateMarkdown");
 
 // Questions Array
 const questions = [
@@ -67,10 +67,16 @@ const questions = [
 ];
 
 // function to write README file
-
+async function writeToFile(fileName, data) {
+  await fs.promises.writeFile(fileName, data, 'utf-8');
+}
 
 // function to initialize program
-
+async function init() {
+  const answers = await inquirer.prompt(questions);
+  const createMarkdown = generateMarkdown(answers);
+  await writeToFile('README.md', createMarkdown);
+}
 
 // function call to initialize program
 init();
