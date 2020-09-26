@@ -12,6 +12,7 @@ const questions = [
     name:'title',
     message:'Please enter the name of your project.'
   },
+  // Used Later
   {
     type:'input',
     name:'email',
@@ -22,15 +23,16 @@ const questions = [
     name:'userName',
     message:'Please enter your gitHub username.'
   },
+  // Used Later ^^
   {
     type:'input',
     name:'describe',
-    message:'Enter a brief description of ' + questions[0][name] + '.'
+    message:'Enter a brief description of your application.'
   },
   {
     type:'input',
     name:'install',
-    message:'Enter a brief description of the installation process for ' + questions[0][name] + '.'
+    message:'Enter a brief description of the installation process for your project.'
   },
   {
     type:'input',
